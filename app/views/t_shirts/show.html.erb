@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @t_shirt.name %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @t_shirt.brand %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @t_shirt.size %>
+</p>
+
+<p>
+  <strong>Designer:</strong>
+  <%= @t_shirt.designer %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @t_shirt.string %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @t_shirt.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @t_shirt.price %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @t_shirt.availability %>
+</p>
+
+<%= link_to 'Edit', edit_t_shirt_path(@t_shirt) %> |
+<%= link_to 'Back', t_shirts_path %>

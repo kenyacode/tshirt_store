@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618003252) do
+ActiveRecord::Schema.define(version: 20150618185135) do
+
+  create_table "t_shirts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "brand"
+    t.string   "size"
+    t.string   "designer"
+    t.string   "string"
+    t.text     "description"
+    t.integer  "price"
+    t.boolean  "availability", default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
