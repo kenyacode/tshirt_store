@@ -1,10 +1,14 @@
 class TShirtsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_t_shirt, only: [:show, :edit, :update, :destroy]
+
+respond_to :html
 
   # GET /t_shirts
   # GET /t_shirts.json
   def index
-    @t_shirts = TShirt.all
+    @t_shirts = TShirt.where(availability: true)
+    respond_with(@t_shirts)
   end
 
   # GET /t_shirts/1
@@ -24,7 +28,7 @@ class TShirtsController < ApplicationController
   # POST /t_shirts
   # POST /t_shirts.json
   def create
-    @t_shirt = TShirt.new(t_shirt_params)
+    @t_shirt = current_user.t_shirts.new(t_shirt_params)
 
     respond_to do |format|
       if @t_shirt.save
