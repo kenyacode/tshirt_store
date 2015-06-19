@@ -1,44 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @t_shirt.name %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @t_shirt.brand %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @t_shirt.size %>
-</p>
-
-<p>
-  <strong>Designer:</strong>
-  <%= @t_shirt.designer %>
-</p>
-
-<p>
-  <strong>String:</strong>
-  <%= @t_shirt.string %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @t_shirt.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @t_shirt.price %>
-</p>
-
-<p>
-  <strong>Availability:</strong>
-  <%= @t_shirt.availability %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag "Black-PAc-150x150.jpg", class: "img-responsive" %>
+  </div>
+  <div class="col-md-6">
+    <h3><%= @t_shirt.name %> by <%= @t_shirt.designer %></h3>
+    <p><%= @t_shirt.description %></p>
+    <h4 class="text-center">$<%= number_with_precision(@t_shirt.price) %></h4>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_t_shirt_path(@t_shirt) %> |
 <%= link_to 'Back', t_shirts_path %>

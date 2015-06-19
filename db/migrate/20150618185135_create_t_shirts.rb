@@ -5,7 +5,6 @@ class CreateTShirts < ActiveRecord::Migration
       t.string :brand
       t.string :size
       t.string :designer
-      t.string :string
       t.text :description
       t.integer :price
       t.boolean :availability, default: true

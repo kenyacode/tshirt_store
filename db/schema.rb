@@ -18,9 +18,8 @@ ActiveRecord::Schema.define(version: 20150618185135) do
     t.string   "brand"
     t.string   "size"
     t.string   "designer"
-    t.string   "string"
     t.text     "description"
-    t.integer  "price"
+    t.decimal  "price"
     t.boolean  "availability", default: true
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
