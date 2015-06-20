@@ -1,0 +1,34 @@
+<div class="row">
+<h1 class="text-center">Dashboard</h1>
+  <div class="col-md-4">
+    <h3 class="text-center">
+      T-shirts <%= link_to "New T-shirt", new_t_shirt_path, class: "btn btn-primary btn-sm" %>
+    </h3>
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Availability</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @t_shirts.each do |t_shirt| %>
+        <tr>
+          <td><%= t_shirt.id %></td>
+          <td><%= link_to t_shirt.name, t_shirt_path(t_shirt) %></td>
+          <td><%= t_shirt.availability %></td>
+          <td><%= link_to "Edit", edit_t_shirt_path(t_shirt) %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <h3 class="text-center">Purchased</h3>
+  </div>
+  <div class="col-md-4">
+    <h3 class="text-center">Sales</h3>
+  </div>
+</div>
